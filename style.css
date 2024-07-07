@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CO&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    font-family: "Bona Nova SC", serif;
+    background-color: #a0aecd;
+    --primary-text-color: black;
+}
+
+body, html{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.title h1 {
+    font-family: "Playwrite CO", cursive;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.nav li {
+    position: absolute;
+    list-style-type: none
+}
+
+.nav li:nth-child(1) {
+    top: 10px;
+    left: 10px;
+}
+
+.nav li:nth-child(2) {
+    top: 10px;
+    right: 10px;
+}
+
+.nav li:nth-child(3) {
+    bottom: 10px;
+    left: 10px;
+}
+
+.nav li:nth-child(4) {
+    bottom: 10px;
+    right: 10px;
+}
+
+.nav li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: var(--primary-text-color);
+}
+
+.nav li a:hover {
+    color: #f3e4e4;
+}
+
+/* music */
+
+.wrapper {
+    width: 100vw;
+    height: 165vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .tape_wrapper {
+    position: absolute;
+    top: 7vw;
+    transform: rotate(180deg);
+  }
+  
+  .tape {
+    z-index: 10;
+    width: 11vw;
+    height: 9vw;
+    stroke-dasharray: 302%;
+    stroke-dashoffset: 302%;
+    animation: brokeTape 1.2s ease alternate infinite;
+  }
+  
+  @keyframes brokeTape {
+    from {
+      stroke-dashoffset: 302%;
+    }
+    to {
+      stroke-dashoffset: 0%;
+    }
+  }
+  
+  .cassette {
+    position: relative;
+    bottom: 5vw;
+    width: 15vw;
+    height: 8vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cassette_static {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .cassette_moving {
+    position: absolute;
+    width: 14.65vw;
+    top: 2.815vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(-0.095vw);
+    height: 1.75vw;
+    z-index: 1;
+  }
+  
+  .cassette_moving_el {
+    height: 1.75vw;
+    animation: cassetteElRotate 4s linear infinite alternate;
+  }
+  
+  
+  .cassette_moving_tape {
+    height: 3vw;
+    width: 3vw;
+    border-radius: 25%;
+    background-color: #1d1d1d;
+    border: 1px solid #888;
+  }
+  
+  .cassette_moving_tape.right {
+    animation: cassetteTapeShrink 4s linear infinite alternate;
+  }
+  
+  .cassette_moving_tape.left {
+    animation: cassetteTapeGrow 4s linear infinite alternate;
+  }
+  
+  @keyframes cassetteElRotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes cassetteTapeGrow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(2);
+    }
+  }
+  
+  @keyframes cassetteTapeShrink {
+    from {
+      transform: scale(2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .music {
+    position: absolute;
+    top: 72%;
+    left: 57%;
+    width: auto;
+}
+  
